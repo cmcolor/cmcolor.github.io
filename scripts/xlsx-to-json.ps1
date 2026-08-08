@@ -97,34 +97,25 @@ foreach ($row in $rows) {
 }
 
 # --- Resolve image filenames against what actually exists on disk ---
-# The xlsx's 圖片檔名 column sometimes names a file that was never saved standalone;
-# in some cases the real photo is a combined "NNN-NNN.jpg" covering a small range of
-# consecutive IDs. We only auto-resolve that specific, unambiguous pattern (both sides
-# look like real 3-digit catalog IDs) - anything else is left blank and reported,
-# per the plan: no silent guessing on data quality issues.
+# The xlsx's 圖片檔名 column sometimes names a file that was never saved, or names the
+# wrong ID (a numbering typo - several rows are self-flagged "編號疑似算錯"). The only
+# safe auto-fix is: if the declared filename is missing, but a file matching the row's
+# OWN id exists (e.g. id 819 -> "819.jpg"), use that - it's not a guess across different
+# products, just correcting the typo back to the row's own id. Anything still missing
+# after that is left blank and reported, per the plan: no guessing on data quality issues.
+# (We previously also guessed from "NNN-NNN.jpg" combo files, assuming one photo covered
+# a whole range of IDs - that turned out wrong for at least 2 products, so it's removed.)
 $imgDir = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -ne "website" } | Select-Object -First 1).FullName
 $actualFiles = Get-ChildItem -Path $imgDir -Filter "*.jpg" | ForEach-Object { $_.Name }
 $actualSet = New-Object 'System.Collections.Generic.HashSet[string]'
 foreach ($f in $actualFiles) { [void]$actualSet.Add($f) }
 
-$rangeMap = @{}
-foreach ($f in $actualFiles) {
-    if ($f -match '^(\d{3})-(\d{3})\.jpg$') {
-        $lo = [int]$matches[1]
-        $hi = [int]$matches[2]
-        if ($hi -ge $lo -and ($hi - $lo) -le 10) {
-            for ($n = $lo; $n -le $hi; $n++) {
-                $rangeMap["$n"] = $f
-            }
-        }
-    }
-}
-
 $missingImages = @()
 foreach ($rec in $records) {
     if ([string]::IsNullOrWhiteSpace($rec.image) -or -not $actualSet.Contains($rec.image)) {
-        if ($rangeMap.ContainsKey($rec.id)) {
-            $rec.image = $rangeMap[$rec.id]
+        $selfNamed = "$($rec.id).jpg"
+        if ($actualSet.Contains($selfNamed)) {
+            $rec.image = $selfNamed
         } else {
             $missingImages += [PSCustomObject]@{ id = $rec.id; name = $rec.name; category = $rec.category; expectedFile = $rec.image }
             $rec.image = ""
@@ -146,6 +137,5 @@ $qaJson = $qaReport | ConvertTo-Json -Depth 5
 [System.IO.File]::WriteAllText((Join-Path $outDir "qa-report.json"), $qaJson, (New-Object System.Text.UTF8Encoding($false)))
 
 Write-Output "Wrote $($records.Count) records to data/name-stickers.json"
-Write-Output "Auto-resolved $($rangeMap.Count -gt 0) range-combo images where applicable"
 Write-Output "Missing images: $($missingImages.Count) (see data/qa-report.json)"
 Write-Output "Pending flags from xlsx: $($qaFlags.Count) (see data/qa-report.json)"

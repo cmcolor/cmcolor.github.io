@@ -816,7 +816,7 @@
         "note":  "",
         "image":  "214.jpg",
         "giftBag":  true,
-        "giftImage":  "214-219.jpg"
+        "giftImage":  "214-1.jpg"
     },
     {
         "id":  "215",
@@ -827,9 +827,9 @@
         "sheetCount":  "144",
         "price":  "150",
         "note":  "售完",
-        "image":  "214-219.jpg",
-        "giftBag":  true,
-        "giftImage":  "214-219.jpg"
+        "image":  "",
+        "giftBag":  false,
+        "giftImage":  ""
     },
     {
         "id":  "216",
@@ -840,9 +840,9 @@
         "sheetCount":  "224",
         "price":  "150",
         "note":  "售完",
-        "image":  "214-219.jpg",
-        "giftBag":  true,
-        "giftImage":  "214-219.jpg"
+        "image":  "",
+        "giftBag":  false,
+        "giftImage":  ""
     },
     {
         "id":  "217",
@@ -854,8 +854,8 @@
         "price":  "150",
         "note":  "",
         "image":  "217.jpg",
-        "giftBag":  true,
-        "giftImage":  "214-219.jpg"
+        "giftBag":  false,
+        "giftImage":  ""
     },
     {
         "id":  "218",
@@ -880,8 +880,8 @@
         "price":  "150",
         "note":  "",
         "image":  "219.jpg",
-        "giftBag":  true,
-        "giftImage":  "214-219.jpg"
+        "giftBag":  false,
+        "giftImage":  ""
     },
     {
         "id":  "220",
@@ -1022,7 +1022,7 @@
         "sheetCount":  "300",
         "price":  "120",
         "note":  "",
-        "image":  "252-253.jpg",
+        "image":  "",
         "giftBag":  true,
         "giftImage":  "252-253.jpg"
     },
@@ -1322,8 +1322,8 @@
         "price":  "120",
         "note":  "",
         "image":  "311.jpg",
-        "giftBag":  false,
-        "giftImage":  ""
+        "giftBag":  true,
+        "giftImage":  "311-1.jpg"
     },
     {
         "id":  "312",
@@ -2816,7 +2816,7 @@
         "sheetCount":  "300",
         "price":  "100",
         "note":  "",
-        "image":  "",
+        "image":  "819.jpg",
         "giftBag":  false,
         "giftImage":  ""
     },
@@ -2920,7 +2920,7 @@
         "sheetCount":  "165",
         "price":  "120",
         "note":  "",
-        "image":  "",
+        "image":  "831.jpg",
         "giftBag":  true,
         "giftImage":  "831-1.jpg"
     },

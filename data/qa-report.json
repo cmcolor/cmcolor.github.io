@@ -242,6 +242,24 @@
                               "expectedFile":  "201.jpg"
                           },
                           {
+                              "id":  "215",
+                              "name":  "三麗鷗-屁屁風",
+                              "category":  "三麗鷗",
+                              "expectedFile":  "215.jpg"
+                          },
+                          {
+                              "id":  "216",
+                              "name":  "可愛小惡魔",
+                              "category":  "三麗鷗",
+                              "expectedFile":  "216.jpg"
+                          },
+                          {
+                              "id":  "253",
+                              "name":  "多美汽車",
+                              "category":  "三麗鷗",
+                              "expectedFile":  "253.jpg"
+                          },
+                          {
                               "id":  "260",
                               "name":  "吉尼兔",
                               "category":  "三麗鷗",
@@ -294,18 +312,6 @@
                               "name":  "熊貓",
                               "category":  "動物",
                               "expectedFile":  "725.jpg"
-                          },
-                          {
-                              "id":  "819",
-                              "name":  "內褲狗",
-                              "category":  "臺灣",
-                              "expectedFile":  "820.jpg"
-                          },
-                          {
-                              "id":  "831",
-                              "name":  "翻糖星球",
-                              "category":  "臺灣",
-                              "expectedFile":  "832.jpg"
                           },
                           {
                               "id":  "833",
