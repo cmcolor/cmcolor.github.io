@@ -46,14 +46,6 @@ function renderProductCard(record, imageBasePath) {
   } else {
     thumbWrap.appendChild(el("div", "no-image", "圖片準備中"));
   }
-  if (record.giftBag && record.giftImage) {
-    const giftThumb = el("img", "gift-thumb");
-    giftThumb.src = `${imageBasePath}${record.giftImage}`;
-    giftThumb.alt = "贈品：可愛包";
-    giftThumb.title = "送可愛包";
-    giftThumb.loading = "lazy";
-    thumbWrap.appendChild(giftThumb);
-  }
   card.appendChild(thumbWrap);
 
   if (isSoldOut(record)) {
@@ -77,7 +69,93 @@ function renderProductCard(record, imageBasePath) {
   info.appendChild(el("p", "price", record.price ? `$${record.price}` : "價格洽詢"));
   card.appendChild(info);
 
+  card.addEventListener("click", () => openProductModal(record, imageBasePath));
+
   return card;
+}
+
+let modalEl = null;
+
+function ensureModal() {
+  if (modalEl) return modalEl;
+
+  modalEl = el("div", "modal-overlay");
+  modalEl.hidden = true;
+
+  const box = el("div", "modal-box");
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+
+  const closeBtn = el("button", "modal-close", "×");
+  closeBtn.setAttribute("aria-label", "關閉");
+  closeBtn.addEventListener("click", closeProductModal);
+  box.appendChild(closeBtn);
+
+  box.appendChild(el("div", "modal-images"));
+  box.appendChild(el("div", "modal-info"));
+
+  modalEl.appendChild(box);
+  modalEl.addEventListener("click", (e) => {
+    if (e.target === modalEl) closeProductModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeProductModal();
+  });
+
+  document.body.appendChild(modalEl);
+  return modalEl;
+}
+
+function closeProductModal() {
+  if (modalEl) modalEl.hidden = true;
+}
+
+function openProductModal(record, imageBasePath) {
+  const modal = ensureModal();
+  const imagesEl = modal.querySelector(".modal-images");
+  const infoEl = modal.querySelector(".modal-info");
+  imagesEl.innerHTML = "";
+  infoEl.innerHTML = "";
+
+  const mainBlock = el("div", "modal-image-block");
+  if (record.image) {
+    const img = el("img", "modal-img");
+    img.src = `${imageBasePath}${record.image}`;
+    img.alt = record.name || record.id;
+    mainBlock.appendChild(img);
+  } else {
+    mainBlock.appendChild(el("div", "no-image", "圖片準備中"));
+  }
+  mainBlock.appendChild(el("p", "modal-image-caption", "貼紙款式"));
+  imagesEl.appendChild(mainBlock);
+
+  if (record.giftBag && record.giftImage) {
+    const giftBlock = el("div", "modal-image-block");
+    const giftImg = el("img", "modal-img");
+    giftImg.src = `${imageBasePath}${record.giftImage}`;
+    giftImg.alt = "贈品：可愛包";
+    giftBlock.appendChild(giftImg);
+    giftBlock.appendChild(el("p", "modal-image-caption", "🎁 贈品：可愛包（送完為止）"));
+    imagesEl.appendChild(giftBlock);
+  }
+
+  const nameRow = el("h3", "modal-name");
+  nameRow.appendChild(document.createTextNode(record.name || "未命名款式"));
+  if (record.id) nameRow.appendChild(el("span", "id-tag", ` #${record.id}`));
+  infoEl.appendChild(nameRow);
+
+  const metaParts = [];
+  if (record.size) metaParts.push(record.size);
+  if (record.dimensions) metaParts.push(record.dimensions);
+  infoEl.appendChild(el("p", "modal-meta", metaParts.join(" · ")));
+
+  infoEl.appendChild(el("p", "modal-price", record.price ? `$${record.price}` : "價格洽詢"));
+
+  if (isSoldOut(record)) {
+    infoEl.appendChild(el("p", "modal-soldout", "已售完"));
+  }
+
+  modal.hidden = false;
 }
 
 function setupCatalogPage({ dataPath, imageBasePath, gridEl, filterBarEl, searchEl, countEl }) {
