@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "name-stickers",
+    "title": "姓名貼紙",
+    "description": "日本動漫、三麗鷗、迪士尼、美國、韓國、動物、臺灣等超過 200 款圖案可選",
+    "status": "available",
+    "href": "products/name-stickers.html",
+    "icon": "🏷️"
+  },
+  {
+    "slug": "photo-printing",
+    "title": "洗相片",
+    "description": "各種尺寸沖印服務",
+    "status": "coming-soon",
+    "icon": "🖼️"
+  },
+  {
+    "slug": "id-photos",
+    "title": "證件照",
+    "description": "護照、簽證、駕照、學生用、檢定、身分證、選舉半身照",
+    "status": "coming-soon",
+    "icon": "📷"
+  },
+  {
+    "slug": "wooden-stamps",
+    "title": "木頭印章",
+    "description": "客製化木頭印章",
+    "status": "coming-soon",
+    "icon": "🪵"
+  },
+  {
+    "slug": "laminating",
+    "title": "護貝",
+    "description": "文件、證件護貝服務",
+    "status": "coming-soon",
+    "icon": "📄"
+  },
+  {
+    "slug": "framing",
+    "title": "裝框",
+    "description": "相片、證書裝框服務",
+    "status": "coming-soon",
+    "icon": "🖼️"
+  },
+  {
+    "slug": "keychains",
+    "title": "鑰匙圈",
+    "description": "客製化相片鑰匙圈",
+    "status": "coming-soon",
+    "icon": "🔑"
+  },
+  {
+    "slug": "badges",
+    "title": "胸章",
+    "description": "客製化相片胸章",
+    "status": "coming-soon",
+    "icon": "🎖️"
+  },
+  {
+    "slug": "instax-film",
+    "title": "拍立得底片",
+    "description": "各廠牌拍立得底片",
+    "status": "coming-soon",
+    "icon": "🎞️"
+  },
+  {
+    "slug": "peripherals",
+    "title": "外轉周邊",
+    "description": "連續印章、肚臍章及其他周邊商品",
+    "status": "coming-soon",
+    "icon": "✨"
+  }
+]

@@ -1,0 +1,353 @@
+{
+    "pendingFlags":  [
+                         {
+                             "row":  4,
+                             "id":  "103",
+                             "name":  "火隱忍者",
+                             "pending":  "",
+                             "extraCols":  {
+                                               "M":  "3x1.4",
+                                               "L":  "大"
+                                           }
+                         },
+                         {
+                             "row":  5,
+                             "id":  "104",
+                             "name":  "航海王",
+                             "pending":  "",
+                             "extraCols":  {
+                                               "M":  "2.2x0.9",
+                                               "L":  "小"
+                                           }
+                         },
+                         {
+                             "row":  215,
+                             "id":  "815",
+                             "name":  "小天使",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  216,
+                             "id":  "816",
+                             "name":  "中國娃娃",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  217,
+                             "id":  "818",
+                             "name":  "造型貝蒂",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  218,
+                             "id":  "819",
+                             "name":  "內褲狗",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  219,
+                             "id":  "821",
+                             "name":  "可愛卡通圖",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  220,
+                             "id":  "823",
+                             "name":  "交通工具",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  221,
+                             "id":  "824",
+                             "name":  "交通工具",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  222,
+                             "id":  "825",
+                             "name":  "超級飛俠",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  223,
+                             "id":  "827",
+                             "name":  "超級飛俠",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  224,
+                             "id":  "828",
+                             "name":  "猴硐貓小P",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  225,
+                             "id":  "830",
+                             "name":  "猴硐貓小P",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  226,
+                             "id":  "831",
+                             "name":  "翻糖星球",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  227,
+                             "id":  "833",
+                             "name":  "彎彎",
+                             "pending":  "編號疑似算錯，請確認",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  228,
+                             "id":  "901",
+                             "name":  "卡娜赫拉",
+                             "pending":  "新規格，缺大小欄位",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  229,
+                             "id":  "902",
+                             "name":  "多美汽車",
+                             "pending":  "新規格，缺大小欄位",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  230,
+                             "id":  "903",
+                             "name":  "小小兵",
+                             "pending":  "新規格，缺大小欄位",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  231,
+                             "id":  "904",
+                             "name":  "粉紅豬小妹",
+                             "pending":  "新規格，缺大小欄位",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  232,
+                             "id":  "905",
+                             "name":  "救援小英雄波力",
+                             "pending":  "新規格，缺大小欄位",
+                             "extraCols":  {
+
+                                           }
+                         },
+                         {
+                             "row":  233,
+                             "id":  "906",
+                             "name":  "寶露露",
+                             "pending":  "新規格，缺大小欄位",
+                             "extraCols":  {
+
+                                           }
+                         }
+                     ],
+    "missingImages":  [
+                          {
+                              "id":  "113",
+                              "name":  "哆啦A夢",
+                              "category":  "日本動漫",
+                              "expectedFile":  "113.jpg"
+                          },
+                          {
+                              "id":  "116",
+                              "name":  "蠟筆小新(A)",
+                              "category":  "日本動漫",
+                              "expectedFile":  "116.jpg"
+                          },
+                          {
+                              "id":  "117",
+                              "name":  "蠟筆小新(A)",
+                              "category":  "日本動漫",
+                              "expectedFile":  "117.jpg"
+                          },
+                          {
+                              "id":  "125",
+                              "name":  "妖怪手錶",
+                              "category":  "日本動漫",
+                              "expectedFile":  "125.jpg"
+                          },
+                          {
+                              "id":  "139",
+                              "name":  "魔法咪嚕",
+                              "category":  "日本動漫",
+                              "expectedFile":  "139.jpg"
+                          },
+                          {
+                              "id":  "147",
+                              "name":  "爆走哈姆醬",
+                              "category":  "日本動漫",
+                              "expectedFile":  "147.jpg"
+                          },
+                          {
+                              "id":  "148",
+                              "name":  "爆走哈姆醬",
+                              "category":  "日本動漫",
+                              "expectedFile":  "148.jpg"
+                          },
+                          {
+                              "id":  "201",
+                              "name":  "40週年雙子星",
+                              "category":  "三麗鷗",
+                              "expectedFile":  "201.jpg"
+                          },
+                          {
+                              "id":  "260",
+                              "name":  "吉尼兔",
+                              "category":  "三麗鷗",
+                              "expectedFile":  "260.jpg"
+                          },
+                          {
+                              "id":  "312",
+                              "name":  "汽車總動員",
+                              "category":  "迪士尼",
+                              "expectedFile":  "312.jpg"
+                          },
+                          {
+                              "id":  "324",
+                              "name":  "珠光迪士尼",
+                              "category":  "迪士尼",
+                              "expectedFile":  "324.jpg"
+                          },
+                          {
+                              "id":  "331",
+                              "name":  "愛麗絲",
+                              "category":  "迪士尼",
+                              "expectedFile":  "331.jpg"
+                          },
+                          {
+                              "id":  "332",
+                              "name":  "愛麗絲",
+                              "category":  "迪士尼",
+                              "expectedFile":  "332.jpg"
+                          },
+                          {
+                              "id":  "527",
+                              "name":  "史努比",
+                              "category":  "美國",
+                              "expectedFile":  "527.jpg"
+                          },
+                          {
+                              "id":  "655",
+                              "name":  "逗逗蟲",
+                              "category":  "韓國",
+                              "expectedFile":  "655.jpg"
+                          },
+                          {
+                              "id":  "661",
+                              "name":  "賤兔",
+                              "category":  "韓國",
+                              "expectedFile":  "661.jpg"
+                          },
+                          {
+                              "id":  "725",
+                              "name":  "熊貓",
+                              "category":  "動物",
+                              "expectedFile":  "725.jpg"
+                          },
+                          {
+                              "id":  "819",
+                              "name":  "內褲狗",
+                              "category":  "臺灣",
+                              "expectedFile":  "820.jpg"
+                          },
+                          {
+                              "id":  "831",
+                              "name":  "翻糖星球",
+                              "category":  "臺灣",
+                              "expectedFile":  "832.jpg"
+                          },
+                          {
+                              "id":  "833",
+                              "name":  "彎彎",
+                              "category":  "臺灣",
+                              "expectedFile":  "833.jpg"
+                          },
+                          {
+                              "id":  "901",
+                              "name":  "卡娜赫拉",
+                              "category":  "熨燙貼",
+                              "expectedFile":  "901.jpg"
+                          },
+                          {
+                              "id":  "902",
+                              "name":  "多美汽車",
+                              "category":  "熨燙貼",
+                              "expectedFile":  "902.jpg"
+                          },
+                          {
+                              "id":  "903",
+                              "name":  "小小兵",
+                              "category":  "熨燙貼",
+                              "expectedFile":  "903.jpg"
+                          },
+                          {
+                              "id":  "904",
+                              "name":  "粉紅豬小妹",
+                              "category":  "熨燙貼",
+                              "expectedFile":  "904.jpg"
+                          },
+                          {
+                              "id":  "905",
+                              "name":  "救援小英雄波力",
+                              "category":  "熨燙貼",
+                              "expectedFile":  "905.jpg"
+                          },
+                          {
+                              "id":  "906",
+                              "name":  "寶露露",
+                              "category":  "熨燙貼",
+                              "expectedFile":  "906.jpg"
+                          }
+                      ]
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>姓名貼紙型錄｜群美彩色攝影沖印社</title>
+<meta name="description" content="群美照相館姓名貼紙型錄：日本動漫、三麗鷗、迪士尼、美國、韓國、動物、臺灣等超過200款圖案與價格">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <h1 class="shop-name">姓名貼紙型錄</h1>
+    <p class="shop-tagline">群美彩色攝影沖印社</p>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">← 回首頁</a></p>
+
+  <input type="text" class="search-box" id="search-box" placeholder="搜尋款式名稱或編號，例如：Kitty、鬼滅之刃、101">
+
+  <div class="filter-bar" id="filter-bar"></div>
+
+  <p class="result-count" id="result-count"></p>
+
+  <div class="product-grid" id="product-grid"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>圖片與款式陸續更新中，實際款式與庫存以店內現場為準。如有疑問歡迎來電洽詢：049-2357301</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  setupCatalogPage({
+    dataPath: "../data/name-stickers.json",
+    imageBasePath: "../assets/images/name-stickers/",
+    gridEl: document.getElementById("product-grid"),
+    filterBarEl: document.getElementById("filter-bar"),
+    searchEl: document.getElementById("search-box"),
+    countEl: document.getElementById("result-count"),
+  });
+</script>
+</body>
+</html>
