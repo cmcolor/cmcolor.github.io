@@ -96,6 +96,11 @@ foreach ($row in $rows) {
     }
 }
 
+# The xlsx rows are supposed to be in ascending catalog-number order, but a couple of
+# rows were out of order in the sheet itself (e.g. 333 listed before 332). Sort by
+# numeric id so the site always displays in catalog order regardless of row order.
+$records = @($records | Sort-Object { [int]$_.id })
+
 # --- Resolve image filenames against what actually exists on disk ---
 # The xlsx's 圖片檔名 column sometimes names a file that was never saved, or names the
 # wrong ID (a numbering typo - several rows are self-flagged "編號疑似算錯"). The only
