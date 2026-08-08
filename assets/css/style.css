@@ -178,6 +178,35 @@ a { color: var(--color-accent); }
   color: var(--color-text-muted);
 }
 
+/* Order info box */
+.order-info {
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.order-info-title {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.order-info ol {
+  margin: 8px 0;
+  padding-left: 1.4em;
+}
+
+.order-info li {
+  margin-bottom: 4px;
+}
+
+.order-info-contact {
+  margin: 10px 0 0;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
 /* Filters (name-stickers page) */
 .filter-bar {
   display: flex;

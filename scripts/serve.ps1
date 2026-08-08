@@ -2,7 +2,7 @@
 # Run: powershell -File scripts/serve.ps1
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
-$port = 8791
+$port = 8793
 
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$port/")
