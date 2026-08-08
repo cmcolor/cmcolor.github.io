@@ -46,6 +46,14 @@ function renderProductCard(record, imageBasePath) {
   } else {
     thumbWrap.appendChild(el("div", "no-image", "圖片準備中"));
   }
+  if (record.giftBag && record.giftImage) {
+    const giftThumb = el("img", "gift-thumb");
+    giftThumb.src = `${imageBasePath}${record.giftImage}`;
+    giftThumb.alt = "贈品：可愛包";
+    giftThumb.title = "送可愛包";
+    giftThumb.loading = "lazy";
+    thumbWrap.appendChild(giftThumb);
+  }
   card.appendChild(thumbWrap);
 
   if (isSoldOut(record)) {

@@ -14,7 +14,9 @@ if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Fo
 
 $dataText = [System.IO.File]::ReadAllText((Join-Path $root "data\name-stickers.json"), [System.Text.Encoding]::UTF8)
 $records = $dataText | ConvertFrom-Json
-$imageNames = $records | Where-Object { $_.image } | ForEach-Object { $_.image } | Sort-Object -Unique
+$imageNames = @($records | Where-Object { $_.image } | ForEach-Object { $_.image })
+$imageNames += @($records | Where-Object { $_.giftImage } | ForEach-Object { $_.giftImage })
+$imageNames = $imageNames | Sort-Object -Unique
 
 $maxWidth = 800
 $jpegQuality = 78
