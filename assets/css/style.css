@@ -286,16 +286,36 @@ a { color: var(--color-accent); }
   font-size: 1rem;
 }
 
-.badge-soldout {
+.badge-soldout,
+.badge-gift {
   position: absolute;
-  top: 8px;
   right: 8px;
-  background: var(--color-badge-soldout);
   color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: 999px;
+}
+
+.badge-soldout {
+  top: 8px;
+  background: var(--color-badge-soldout);
+}
+
+.badge-gift {
+  top: 8px;
+  background: var(--color-accent);
+}
+
+.badge-soldout + .badge-gift,
+.badge-gift + .badge-soldout {
+  top: 36px;
+}
+
+.id-tag {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-size: 0.82rem;
 }
 
 .empty-state {

@@ -51,9 +51,15 @@ function renderProductCard(record, imageBasePath) {
   if (isSoldOut(record)) {
     card.appendChild(el("div", "badge-soldout", "已售完"));
   }
+  if (record.giftBag) {
+    card.appendChild(el("div", "badge-gift", "🎁 送可愛包"));
+  }
 
   const info = el("div", "info");
-  info.appendChild(el("p", "name", record.name || "未命名款式"));
+  const nameRow = el("p", "name");
+  nameRow.appendChild(document.createTextNode(record.name || "未命名款式"));
+  if (record.id) nameRow.appendChild(el("span", "id-tag", ` #${record.id}`));
+  info.appendChild(nameRow);
 
   const metaParts = [];
   if (record.size) metaParts.push(record.size);
