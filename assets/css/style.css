@@ -320,12 +320,6 @@ a { color: var(--color-accent); }
   margin: 0 0 6px;
 }
 
-.product-card .sheet-count {
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-  margin: 0 0 6px;
-}
-
 .product-card .price {
   font-weight: 700;
   color: var(--color-accent-dark);

@@ -64,9 +64,8 @@ function renderProductCard(record, imageBasePath) {
   const metaParts = [];
   if (record.size) metaParts.push(record.size);
   if (record.dimensions) metaParts.push(`${record.dimensions}cm`);
+  if (record.sheetCount) metaParts.push(`共${record.sheetCount}小張`);
   info.appendChild(el("p", "meta", metaParts.join(" · ")));
-
-  if (record.sheetCount) info.appendChild(el("p", "sheet-count", `張數：${record.sheetCount}張`));
 
   info.appendChild(el("p", "price", record.price ? `$${record.price}` : "價格洽詢"));
   card.appendChild(info);
@@ -149,9 +148,8 @@ function openProductModal(record, imageBasePath) {
   const metaParts = [];
   if (record.size) metaParts.push(record.size);
   if (record.dimensions) metaParts.push(`${record.dimensions}cm`);
+  if (record.sheetCount) metaParts.push(`共${record.sheetCount}小張`);
   infoEl.appendChild(el("p", "modal-meta", metaParts.join(" · ")));
-
-  if (record.sheetCount) infoEl.appendChild(el("p", "modal-meta", `張數：${record.sheetCount}張`));
 
   infoEl.appendChild(el("p", "modal-price", record.price ? `$${record.price}` : "價格洽詢"));
 
