@@ -5,9 +5,13 @@
 $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.Drawing
 
+# Raw material folders live under 04_group_photo\NN_category-name\ (numbered to match
+# the website's category order) - located by the "01" prefix rather than the Chinese
+# name, since Windows PowerShell 5.1 mangles non-ASCII literals in unsigned .ps1 source.
 $root = Split-Path -Parent $PSScriptRoot
 $parentDir = Split-Path -Parent $root
-$srcDir = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -ne "website" } | Select-Object -First 1).FullName
+$stickerRoot = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -match '^0?1[_\-]' } | Select-Object -First 1).FullName
+$srcDir = (Get-ChildItem -Path $stickerRoot -Directory | Select-Object -First 1).FullName
 $destDir = Join-Path $root "assets\images\name-stickers"
 
 if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }

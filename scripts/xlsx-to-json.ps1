@@ -8,9 +8,15 @@
 $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
+# Raw material folders now live under 04_group_photo\NN_category-name\ (numbered to
+# match the website's category order). We locate this one by its "01" prefix rather
+# than matching on the Chinese folder name - Windows PowerShell 5.1 mangles non-ASCII
+# literals in .ps1 source files that lack a BOM, so any Chinese text comparison here
+# would silently fail.
 $root = Split-Path -Parent $PSScriptRoot
 $parentDir = Split-Path -Parent $root
-$xlsxPath = (Get-ChildItem -Path $parentDir -Filter "*.xlsx" | Select-Object -First 1).FullName
+$stickerRoot = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -match '^0?1[_\-]' } | Select-Object -First 1).FullName
+$xlsxPath = (Get-ChildItem -Path $stickerRoot -Filter "*.xlsx" -Recurse | Select-Object -First 1).FullName
 $extractDir = Join-Path $env:TEMP "qunmei_xlsx_extract"
 
 if (Test-Path $extractDir) { Remove-Item $extractDir -Recurse -Force }
@@ -110,7 +116,7 @@ $records = @($records | Sort-Object { [int]$_.id })
 # after that is left blank and reported, per the plan: no guessing on data quality issues.
 # (We previously also guessed from "NNN-NNN.jpg" combo files, assuming one photo covered
 # a whole range of IDs - that turned out wrong for at least 2 products, so it's removed.)
-$imgDir = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -ne "website" } | Select-Object -First 1).FullName
+$imgDir = (Get-ChildItem -Path $stickerRoot -Directory | Select-Object -First 1).FullName
 $actualFiles = Get-ChildItem -Path $imgDir -Filter "*.jpg" | ForEach-Object { $_.Name }
 $actualSet = New-Object 'System.Collections.Generic.HashSet[string]'
 foreach ($f in $actualFiles) { [void]$actualSet.Add($f) }

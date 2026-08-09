@@ -3,10 +3,14 @@
 # itself a photo of the free cute bag ("送可愛包") that ID comes with, per the shop owner's rule.
 # Run manually with: powershell -File scripts/add-gift-bag-flag.ps1
 
+# Raw material folders live under 04_group_photo\NN_category-name\ (numbered to match
+# the website's category order) - located by the "01" prefix rather than the Chinese
+# name, since Windows PowerShell 5.1 mangles non-ASCII literals in unsigned .ps1 source.
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $parentDir = Split-Path -Parent $root
-$imgDir = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -ne "website" } | Select-Object -First 1).FullName
+$stickerRoot = (Get-ChildItem -Path $parentDir -Directory | Where-Object { $_.Name -match '^0?1[_\-]' } | Select-Object -First 1).FullName
+$imgDir = (Get-ChildItem -Path $stickerRoot -Directory | Select-Object -First 1).FullName
 $actualFiles = Get-ChildItem -Path $imgDir -Filter "*.jpg" | ForEach-Object { $_.Name }
 
 $giftImageById = @{}
