@@ -116,6 +116,54 @@ a { color: var(--color-accent); }
   padding-top: 8px;
 }
 
+/* Featured category (姓名貼紙 independent section) */
+.featured-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-bottom: 32px;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31, 53, 41, 0.3);
+}
+
+.featured-icon {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+}
+
+.featured-body { flex: 1; min-width: 0; }
+
+.featured-title {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.featured-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #d9e6dd;
+}
+
+.featured-cta {
+  font-weight: 700;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+
 /* Category grid */
 .category-grid {
   display: grid;
@@ -134,7 +182,54 @@ a { color: var(--color-accent); }
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-number {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtag-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 2px 0 -2px;
+}
+
+.subtag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.subtag {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  font-size: 0.76rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.service-tag {
+  align-self: flex-start;
+  background: var(--color-accent-dark);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
 }
 
 .category-card.is-available:hover {

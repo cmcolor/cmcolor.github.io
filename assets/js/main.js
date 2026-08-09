@@ -14,15 +14,46 @@ async function loadJson(path) {
   return res.json();
 }
 
+function renderFeaturedCategory(cat, container) {
+  if (!cat) return;
+  const card = el("a", "featured-card");
+  card.href = cat.href;
+  card.appendChild(el("div", "featured-icon", cat.icon || "🔹"));
+
+  const body = el("div", "featured-body");
+  body.appendChild(el("h2", "featured-title", cat.title));
+  body.appendChild(el("p", "featured-desc", cat.description || ""));
+  card.appendChild(body);
+
+  card.appendChild(el("div", "featured-cta", "查看型錄 →"));
+  container.appendChild(card);
+}
+
 function renderCategoryGrid(categories, container) {
   categories.forEach((cat) => {
     const isAvailable = cat.status === "available";
     const card = el(isAvailable ? "a" : "div", `category-card ${isAvailable ? "is-available" : "is-soon"}`);
     if (isAvailable) card.href = cat.href;
 
+    if (cat.number) card.appendChild(el("div", "category-number", String(cat.number)));
+
     card.appendChild(el("div", "icon", cat.icon || "🔹"));
     card.appendChild(el("div", "title", cat.title));
     card.appendChild(el("div", "desc", cat.description || ""));
+
+    if (Array.isArray(cat.subcategories) && cat.subcategories.length) {
+      if (cat.purposeSelect) {
+        card.appendChild(el("div", "subtag-label", "選擇用途："));
+      }
+      const tagWrap = el("div", "subtag-wrap");
+      cat.subcategories.forEach((sub) => {
+        tagWrap.appendChild(el("span", "subtag", sub));
+      });
+      card.appendChild(tagWrap);
+    }
+
+    if (cat.tag) card.appendChild(el("div", "service-tag", cat.tag));
+
     card.appendChild(el("div", "status", isAvailable ? "查看型錄" : "敬請期待"));
 
     container.appendChild(card);

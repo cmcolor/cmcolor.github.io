@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>群美彩色攝影沖印社｜群美照相館</title>
-<meta name="description" content="群美彩色攝影沖印社（群美照相館）商品型錄：洗相片、證件照、姓名貼紙、木頭印章、護貝、裝框、鑰匙圈、胸章、拍立得底片等">
+<meta name="description" content="群美彩色攝影沖印社（群美照相館）商品型錄：姓名貼紙、相片沖印、證件照、印章類、加工服務、客製配件、周邊商品等">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -35,6 +35,8 @@
     </div>
   </section>
 
+  <div id="featured-category"></div>
+
   <h2 class="section-title">商品型錄</h2>
   <div class="category-grid" id="category-grid"></div>
 </div>
@@ -48,7 +50,12 @@
 <script src="assets/js/main.js"></script>
 <script>
   loadJson("data/categories.json").then((categories) => {
-    renderCategoryGrid(categories, document.getElementById("category-grid"));
+    const featured = categories.find((c) => c.featured);
+    const numbered = categories
+      .filter((c) => !c.featured)
+      .sort((a, b) => (a.number || 0) - (b.number || 0));
+    renderFeaturedCategory(featured, document.getElementById("featured-category"));
+    renderCategoryGrid(numbered, document.getElementById("category-grid"));
   });
 </script>
 </body>
