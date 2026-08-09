@@ -35,8 +35,6 @@
     </div>
   </section>
 
-  <div id="featured-category"></div>
-
   <h2 class="section-title">商品型錄</h2>
   <div class="category-grid" id="category-grid"></div>
 </div>
@@ -50,12 +48,8 @@
 <script src="assets/js/main.js"></script>
 <script>
   loadJson("data/categories.json").then((categories) => {
-    const featured = categories.find((c) => c.featured);
-    const numbered = categories
-      .filter((c) => !c.featured)
-      .sort((a, b) => (a.number || 0) - (b.number || 0));
-    renderFeaturedCategory(featured, document.getElementById("featured-category"));
-    renderCategoryGrid(numbered, document.getElementById("category-grid"));
+    const sorted = [...categories].sort((a, b) => (a.number || 0) - (b.number || 0));
+    renderCategoryGrid(sorted, document.getElementById("category-grid"));
   });
 </script>
 </body>

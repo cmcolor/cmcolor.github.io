@@ -25,21 +25,6 @@ function renderPriceTable(rows, tbodyEl) {
   });
 }
 
-function renderFeaturedCategory(cat, container) {
-  if (!cat) return;
-  const card = el("a", "featured-card");
-  card.href = cat.href;
-  card.appendChild(el("div", "featured-icon", cat.icon || "🔹"));
-
-  const body = el("div", "featured-body");
-  body.appendChild(el("h2", "featured-title", cat.title));
-  body.appendChild(el("p", "featured-desc", cat.description || ""));
-  card.appendChild(body);
-
-  card.appendChild(el("div", "featured-cta", "查看型錄 →"));
-  container.appendChild(card);
-}
-
 function renderCategoryGrid(categories, container) {
   categories.forEach((cat) => {
     const isAvailable = cat.status === "available";
@@ -58,14 +43,40 @@ function renderCategoryGrid(categories, container) {
       }
       const tagWrap = el("div", "subtag-wrap");
       cat.subcategories.forEach((sub) => {
-        tagWrap.appendChild(el("span", "subtag", sub));
+        tagWrap.appendChild(el("span", `subtag${cat.purposeSelect ? " is-soon" : ""}`, sub));
       });
       card.appendChild(tagWrap);
     }
 
-    if (cat.tag) card.appendChild(el("div", "service-tag", cat.tag));
+    if (cat.tag) card.appendChild(el("div", "service-tag", `＋ ${cat.tag}`));
 
-    card.appendChild(el("div", "status", isAvailable ? "查看型錄" : "敬請期待"));
+    const statusRow = el("div", "status-row");
+    const statusEl = el("span", "status", isAvailable ? "查看型錄" : "敬請期待");
+    statusRow.appendChild(statusEl);
+
+    if (isAvailable && cat.countSource) {
+      loadJson(cat.countSource)
+        .then((data) => statusEl.appendChild(el("span", "count-badge", `共 ${data.length} 款`)))
+        .catch(() => {});
+    }
+
+    card.appendChild(statusRow);
+
+    if (!isAvailable) {
+      const inquiry = el("p", "inquiry-line");
+      inquiry.appendChild(document.createTextNode("型錄建置中，如需選購請先"));
+      const callLink = el("a", "inquiry-link", "來電");
+      callLink.href = "tel:0492357301";
+      inquiry.appendChild(callLink);
+      inquiry.appendChild(document.createTextNode("或加 "));
+      const lineLink = el("a", "inquiry-link", "LINE");
+      lineLink.href = "https://line.me/ti/p/~02357301";
+      lineLink.target = "_blank";
+      lineLink.rel = "noopener";
+      inquiry.appendChild(lineLink);
+      inquiry.appendChild(document.createTextNode(" 詢問"));
+      card.appendChild(inquiry);
+    }
 
     container.appendChild(card);
   });

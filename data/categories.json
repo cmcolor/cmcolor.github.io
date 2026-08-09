@@ -1,15 +1,16 @@
 [
   {
+    "number": 1,
     "slug": "name-stickers",
     "title": "姓名貼紙",
     "description": "日本動漫、三麗鷗、迪士尼、美國、韓國、動物、臺灣等超過 200 款圖案可選",
     "status": "available",
     "href": "products/name-stickers.html",
     "icon": "🏷️",
-    "featured": true
+    "countSource": "data/name-stickers.json"
   },
   {
-    "number": 1,
+    "number": 2,
     "slug": "photo-printing",
     "title": "相片沖印",
     "description": "洗相片依尺寸、價格分級，另有拍立得底片選購",
@@ -19,7 +20,7 @@
     "subcategories": ["洗相片（依尺寸／價格分）", "拍立得底片（敬請期待）"]
   },
   {
-    "number": 2,
+    "number": 3,
     "slug": "id-photos",
     "title": "證件照／大頭照",
     "description": "依用途挑選合適的證件照規格",
@@ -29,7 +30,7 @@
     "subcategories": ["護照", "簽證", "駕照", "學生證", "國家考試（檢定）", "身分證", "選舉半身照"]
   },
   {
-    "number": 3,
+    "number": 4,
     "slug": "stamps",
     "title": "印章類",
     "description": "木頭印章、連續印章、肚臍章，可再依款式或用途細分選購",
@@ -38,7 +39,7 @@
     "subcategories": ["木頭印章", "連續印章", "肚臍章"]
   },
   {
-    "number": 4,
+    "number": 5,
     "slug": "processing-services",
     "title": "加工服務",
     "description": "護貝、裝框，適合作為沖印相片的加購服務",
@@ -48,7 +49,7 @@
     "subcategories": ["護貝", "裝框"]
   },
   {
-    "number": 5,
+    "number": 6,
     "slug": "custom-accessories",
     "title": "客製配件",
     "description": "鑰匙圈、胸章等客製化相片配件",
@@ -57,7 +58,7 @@
     "subcategories": ["鑰匙圈", "胸章"]
   },
   {
-    "number": 6,
+    "number": 7,
     "slug": "peripherals",
     "title": "周邊商品",
     "description": "外轉類商品及其他雜項，保留彈性以利未來新增品項",
