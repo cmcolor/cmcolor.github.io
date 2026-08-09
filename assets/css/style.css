@@ -173,6 +173,42 @@ a { color: var(--color-accent); }
   background: var(--color-surface);
 }
 
+.instax-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.instax-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: var(--color-accent-soft);
+  border-radius: 10px;
+}
+
+.instax-name {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.instax-note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.instax-note a {
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
 /* Category grid */
 .category-grid {
   display: grid;
