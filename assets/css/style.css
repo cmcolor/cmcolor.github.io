@@ -116,6 +116,48 @@ a { color: var(--color-accent); }
   padding-top: 8px;
 }
 
+/* Price table */
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  font-size: 0.92rem;
+}
+
+.price-table th,
+.price-table td {
+  padding: 12px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.price-table thead th {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  font-weight: 700;
+}
+
+.price-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.price-table .col-note {
+  color: var(--color-text-muted);
+  white-space: normal;
+}
+
+.price-table .col-price {
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
 /* Featured category (姓名貼紙 independent section) */
 .featured-card {
   display: flex;

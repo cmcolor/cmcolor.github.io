@@ -1,0 +1,13 @@
+[
+  { "size": "2x3", "note": "一組兩張", "dimensions": "6.35x8.9", "price": "8" },
+  { "size": "3x5", "note": "", "dimensions": "8.9x12.7", "price": "5" },
+  { "size": "4x6", "note": "", "dimensions": "10.2x15.2", "price": "6" },
+  { "size": "5x7", "note": "", "dimensions": "12.7x17.8", "price": "20" },
+  { "size": "6x8", "note": "", "dimensions": "15.2x20.3", "price": "30" },
+  { "size": "8x10", "note": "含護貝", "dimensions": "20.3x25.4", "price": "100" },
+  { "size": "8x12", "note": "接近A4，含護貝", "dimensions": "20.3x30.5", "price": "120" },
+  { "size": "10x12", "note": "含護貝", "dimensions": "25.4x30.5", "price": "160" },
+  { "size": "10x15", "note": "含護貝", "dimensions": "25.4x38", "price": "250" },
+  { "size": "12x15", "note": "含護貝", "dimensions": "30.5x38", "price": "300" },
+  { "size": "12x18", "note": "含護貝", "dimensions": "30.5x45.8", "price": "350" }
+]

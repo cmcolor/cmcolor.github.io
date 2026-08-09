@@ -14,6 +14,17 @@ async function loadJson(path) {
   return res.json();
 }
 
+function renderPriceTable(rows, tbodyEl) {
+  rows.forEach((row) => {
+    const tr = el("tr");
+    tr.appendChild(el("td", "col-size", row.size || ""));
+    tr.appendChild(el("td", "col-dimensions", row.dimensions ? `${row.dimensions}cm` : ""));
+    tr.appendChild(el("td", "col-note", row.note || ""));
+    tr.appendChild(el("td", "col-price", row.price ? `$${row.price}` : "價格洽詢"));
+    tbodyEl.appendChild(tr);
+  });
+}
+
 function renderFeaturedCategory(cat, container) {
   if (!cat) return;
   const card = el("a", "featured-card");

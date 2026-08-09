@@ -13,9 +13,10 @@
     "slug": "photo-printing",
     "title": "相片沖印",
     "description": "洗相片依尺寸、價格分級，另有拍立得底片選購",
-    "status": "coming-soon",
+    "status": "available",
+    "href": "products/photo-printing.html",
     "icon": "🖼️",
-    "subcategories": ["洗相片（依尺寸／價格分）", "拍立得底片"]
+    "subcategories": ["洗相片（依尺寸／價格分）", "拍立得底片（敬請期待）"]
   },
   {
     "number": 2,

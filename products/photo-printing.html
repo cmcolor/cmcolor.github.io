@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相片沖印價目表｜群美彩色攝影沖印社</title>
+<meta name="description" content="群美照相館洗相片尺寸與價格：2x3 到 12x18，各種尺寸沖印價格一覽">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <h1 class="shop-name">相片沖印價目表</h1>
+    <p class="shop-tagline">群美彩色攝影沖印社</p>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">← 回首頁</a></p>
+
+  <h2 class="section-title">洗相片</h2>
+  <div class="table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>尺寸</th>
+          <th>實際尺寸</th>
+          <th>備註</th>
+          <th>價格</th>
+        </tr>
+      </thead>
+      <tbody id="price-table-body"></tbody>
+    </table>
+  </div>
+
+  <p class="empty-state">🎞️ 拍立得底片選購，敬請期待</p>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>價格如有調整以店內現場公告為準。如有疑問歡迎來電洽詢：049-2357301</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  loadJson("../data/photo-printing.json").then((rows) => {
+    renderPriceTable(rows, document.getElementById("price-table-body"));
+  });
+</script>
+</body>
+</html>
