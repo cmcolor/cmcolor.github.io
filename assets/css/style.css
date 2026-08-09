@@ -158,6 +158,21 @@ a { color: var(--color-accent); }
   color: var(--color-accent-dark);
 }
 
+.size-chart-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.size-chart-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
 /* Featured category (姓名貼紙 independent section) */
 .featured-card {
   display: flex;
