@@ -63,8 +63,10 @@ function renderProductCard(record, imageBasePath) {
 
   const metaParts = [];
   if (record.size) metaParts.push(record.size);
-  if (record.dimensions) metaParts.push(record.dimensions);
+  if (record.dimensions) metaParts.push(`${record.dimensions}cm`);
   info.appendChild(el("p", "meta", metaParts.join(" · ")));
+
+  if (record.sheetCount) info.appendChild(el("p", "sheet-count", `張數：${record.sheetCount}張`));
 
   info.appendChild(el("p", "price", record.price ? `$${record.price}` : "價格洽詢"));
   card.appendChild(info);
@@ -146,8 +148,10 @@ function openProductModal(record, imageBasePath) {
 
   const metaParts = [];
   if (record.size) metaParts.push(record.size);
-  if (record.dimensions) metaParts.push(record.dimensions);
+  if (record.dimensions) metaParts.push(`${record.dimensions}cm`);
   infoEl.appendChild(el("p", "modal-meta", metaParts.join(" · ")));
+
+  if (record.sheetCount) infoEl.appendChild(el("p", "modal-meta", `張數：${record.sheetCount}張`));
 
   infoEl.appendChild(el("p", "modal-price", record.price ? `$${record.price}` : "價格洽詢"));
 
@@ -158,11 +162,18 @@ function openProductModal(record, imageBasePath) {
   modal.hidden = false;
 }
 
-function setupCatalogPage({ dataPath, imageBasePath, gridEl, filterBarEl, searchEl, countEl }) {
+function setupCatalogPage({ dataPath, imageBasePath, gridEl, filterBarEl, searchEl, countEl, comingSoonCategories = [] }) {
   let allRecords = [];
   let activeCategory = "全部";
 
   function applyFilters() {
+    if (comingSoonCategories.includes(activeCategory)) {
+      gridEl.innerHTML = "";
+      countEl.textContent = "";
+      gridEl.appendChild(el("div", "empty-state", `「${activeCategory}」即將推出，敬請期待`));
+      return;
+    }
+
     const keyword = (searchEl.value || "").trim().toLowerCase();
     const filtered = allRecords.filter((r) => {
       const matchesCategory = activeCategory === "全部" || r.category === activeCategory;
@@ -183,21 +194,25 @@ function setupCatalogPage({ dataPath, imageBasePath, gridEl, filterBarEl, search
     filtered.forEach((r) => gridEl.appendChild(renderProductCard(r, imageBasePath)));
   }
 
+  function addChip(cat, isComingSoon) {
+    const chip = el("button", "filter-chip", isComingSoon ? `${cat}（敬請期待）` : cat);
+    if (isComingSoon) chip.classList.add("is-coming-soon");
+    if (cat === activeCategory) chip.classList.add("is-active");
+    chip.addEventListener("click", () => {
+      activeCategory = cat;
+      filterBarEl.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      applyFilters();
+    });
+    filterBarEl.appendChild(chip);
+  }
+
   loadJson(dataPath).then((records) => {
     allRecords = records;
     const categories = ["全部", ...new Set(records.map((r) => r.category).filter(Boolean))];
 
-    categories.forEach((cat) => {
-      const chip = el("button", "filter-chip", cat);
-      if (cat === activeCategory) chip.classList.add("is-active");
-      chip.addEventListener("click", () => {
-        activeCategory = cat;
-        filterBarEl.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("is-active"));
-        chip.classList.add("is-active");
-        applyFilters();
-      });
-      filterBarEl.appendChild(chip);
-    });
+    categories.forEach((cat) => addChip(cat, false));
+    comingSoonCategories.forEach((cat) => addChip(cat, true));
 
     searchEl.addEventListener("input", applyFilters);
     applyFilters();

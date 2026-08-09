@@ -225,6 +225,11 @@ a { color: var(--color-accent); }
   cursor: pointer;
 }
 
+.filter-chip.is-coming-soon {
+  color: var(--color-text-muted);
+  border-style: dashed;
+}
+
 .filter-chip.is-active {
   background: var(--color-accent);
   border-color: var(--color-accent);
@@ -310,6 +315,12 @@ a { color: var(--color-accent); }
 }
 
 .product-card .meta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0 0 6px;
+}
+
+.product-card .sheet-count {
   font-size: 0.78rem;
   color: var(--color-text-muted);
   margin: 0 0 6px;
