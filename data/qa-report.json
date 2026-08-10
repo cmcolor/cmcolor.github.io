@@ -200,18 +200,6 @@
                               "expectedFile":  "113.jpg"
                           },
                           {
-                              "id":  "116",
-                              "name":  "蠟筆小新(A)",
-                              "category":  "日本動漫",
-                              "expectedFile":  "116.jpg"
-                          },
-                          {
-                              "id":  "117",
-                              "name":  "蠟筆小新(A)",
-                              "category":  "日本動漫",
-                              "expectedFile":  "117.jpg"
-                          },
-                          {
                               "id":  "125",
                               "name":  "妖怪手錶",
                               "category":  "日本動漫",
@@ -222,18 +210,6 @@
                               "name":  "魔法咪嚕",
                               "category":  "日本動漫",
                               "expectedFile":  "139.jpg"
-                          },
-                          {
-                              "id":  "147",
-                              "name":  "爆走哈姆醬",
-                              "category":  "日本動漫",
-                              "expectedFile":  "147.jpg"
-                          },
-                          {
-                              "id":  "148",
-                              "name":  "爆走哈姆醬",
-                              "category":  "日本動漫",
-                              "expectedFile":  "148.jpg"
                           },
                           {
                               "id":  "201",
@@ -252,12 +228,6 @@
                               "name":  "可愛小惡魔",
                               "category":  "三麗鷗",
                               "expectedFile":  "216.jpg"
-                          },
-                          {
-                              "id":  "253",
-                              "name":  "多美汽車",
-                              "category":  "三麗鷗",
-                              "expectedFile":  "253.jpg"
                           },
                           {
                               "id":  "260",
@@ -318,36 +288,6 @@
                               "name":  "彎彎",
                               "category":  "臺灣",
                               "expectedFile":  "833.jpg"
-                          },
-                          {
-                              "id":  "901",
-                              "name":  "卡娜赫拉",
-                              "category":  "熨燙貼",
-                              "expectedFile":  "901.jpg"
-                          },
-                          {
-                              "id":  "902",
-                              "name":  "多美汽車",
-                              "category":  "熨燙貼",
-                              "expectedFile":  "902.jpg"
-                          },
-                          {
-                              "id":  "903",
-                              "name":  "小小兵",
-                              "category":  "熨燙貼",
-                              "expectedFile":  "903.jpg"
-                          },
-                          {
-                              "id":  "904",
-                              "name":  "粉紅豬小妹",
-                              "category":  "熨燙貼",
-                              "expectedFile":  "904.jpg"
-                          },
-                          {
-                              "id":  "905",
-                              "name":  "救援小英雄波力",
-                              "category":  "熨燙貼",
-                              "expectedFile":  "905.jpg"
                           },
                           {
                               "id":  "906",
