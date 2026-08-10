@@ -31,6 +31,43 @@ a { color: var(--color-accent); }
   padding: 0 20px;
 }
 
+/* Top nav (Apple/Nike-style category bar, sticky across all pages) */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.top-nav-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 4px;
+  padding: 10px 20px;
+  scrollbar-width: none;
+}
+
+.top-nav-inner::-webkit-scrollbar { display: none; }
+
+.top-nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.top-nav-link:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+}
+
 /* Header */
 .site-header {
   background: var(--color-accent);

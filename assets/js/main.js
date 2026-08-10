@@ -25,11 +25,30 @@ function renderPriceTable(rows, tbodyEl) {
   });
 }
 
+function renderTopNav(categories, container, basePath) {
+  const sorted = [...categories].sort((a, b) => (a.number || 0) - (b.number || 0));
+  sorted.forEach((cat) => {
+    const href = cat.status === "available"
+      ? `${basePath}${cat.href}`
+      : `${basePath}index.html#cat-${cat.slug}`;
+    const link = el("a", "top-nav-link", cat.title);
+    link.href = href;
+    container.appendChild(link);
+  });
+}
+
+function scrollToHash() {
+  if (!location.hash) return;
+  const target = document.querySelector(location.hash);
+  if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
 function renderCategoryGrid(categories, container) {
   categories.forEach((cat) => {
     const isAvailable = cat.status === "available";
     const card = el(isAvailable ? "a" : "div", `category-card ${isAvailable ? "is-available" : "is-soon"}`);
     if (isAvailable) card.href = cat.href;
+    card.id = `cat-${cat.slug}`;
 
     if (cat.number) card.appendChild(el("div", "category-number", String(cat.number)));
 

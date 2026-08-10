@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<nav class="top-nav"><div class="container top-nav-inner" id="top-nav"></div></nav>
+
 <header class="site-header">
   <div class="container">
     <h1 class="shop-name">姓名貼紙型錄</h1>
@@ -48,6 +50,9 @@
 
 <script src="../assets/js/main.js"></script>
 <script>
+  loadJson("../data/categories.json").then((categories) => {
+    renderTopNav(categories, document.getElementById("top-nav"), "../");
+  });
   setupCatalogPage({
     dataPath: "../data/name-stickers.json",
     imageBasePath: "../assets/images/name-stickers/",

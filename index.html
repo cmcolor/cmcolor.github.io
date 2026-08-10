@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<nav class="top-nav"><div class="container top-nav-inner" id="top-nav"></div></nav>
+
 <header class="site-header">
   <div class="container">
     <h1 class="shop-name">群美彩色攝影沖印社</h1>
@@ -50,6 +52,8 @@
   loadJson("data/categories.json").then((categories) => {
     const sorted = [...categories].sort((a, b) => (a.number || 0) - (b.number || 0));
     renderCategoryGrid(sorted, document.getElementById("category-grid"));
+    renderTopNav(sorted, document.getElementById("top-nav"), "");
+    scrollToHash();
   });
 </script>
 </body>
