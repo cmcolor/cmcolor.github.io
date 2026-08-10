@@ -109,6 +109,13 @@ a { color: var(--color-accent); }
 
 .contact-links a:hover { background: #d9e9dd; }
 
+.link-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
 /* Section titles */
 .section-title {
   font-size: 1.2rem;
