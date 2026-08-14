@@ -27,7 +27,7 @@
     "status": "available",
     "href": "products/id-photos.html",
     "icon": "📷",
-    "subcategories": ["護照／身分證／台胞證", "健保卡／履歷照／學生證", "駕照／體檢表", "美簽／特殊簽證"]
+    "subcategories": ["護照", "身分證", "簽證", "駕照", "學生證", "國家考試（檢定）", "選舉半身照"]
   },
   {
     "number": 4,

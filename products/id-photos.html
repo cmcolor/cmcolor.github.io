@@ -36,31 +36,9 @@
           <th>規範重點</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td class="col-size">護照／身分證／台胞證</td>
-          <td class="col-dimensions">2吋大頭（3.5×4.5cm）</td>
-          <td class="col-note">6個月內近照、白底、頭頂至下顎3.2-3.6cm、露耳眉</td>
-        </tr>
-        <tr>
-          <td class="col-size">健保卡／履歷照／學生證</td>
-          <td class="col-dimensions">2吋半身（4.2×4.7cm）</td>
-          <td class="col-note">構圖較寬鬆、可微露齒笑、穿著生活服、不可配戴遮擋配件</td>
-        </tr>
-        <tr>
-          <td class="col-size">汽機車駕照／體檢表</td>
-          <td class="col-dimensions">1吋證件（2.8×3.5cm）</td>
-          <td class="col-note">脫帽、五官清晰、不可遮擋眉眼、背景須為淺色或白色</td>
-        </tr>
-        <tr>
-          <td class="col-size">美簽／印簽／特殊簽證</td>
-          <td class="col-dimensions">5×5cm（正方形）</td>
-          <td class="col-note">美簽需5x5cm白底、不得穿白色上衣、不可配戴眼鏡</td>
-        </tr>
-      </tbody>
+      <tbody id="spec-table-body"></tbody>
     </table>
   </div>
-  <p class="empty-state">國家考試（檢定）照、選舉半身照或其他特殊規格，歡迎來電或加 LINE 洽詢</p>
 
   <h2 class="section-title">拍攝須知</h2>
   <section class="order-info">
@@ -107,6 +85,9 @@
 <script>
   loadJson("../data/categories.json").then((categories) => {
     renderTopNav(categories, document.getElementById("top-nav"), "../");
+  });
+  loadJson("../data/id-photos.json").then((rows) => {
+    renderSpecTable(rows, document.getElementById("spec-table-body"));
   });
   renderVisitorCounter(document.getElementById("visitor-counter"));
 </script>

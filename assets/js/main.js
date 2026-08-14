@@ -37,6 +37,16 @@ function renderPriceTable(rows, tbodyEl) {
   });
 }
 
+function renderSpecTable(rows, tbodyEl) {
+  rows.forEach((row) => {
+    const tr = el("tr");
+    tr.appendChild(el("td", "col-size", row.type || ""));
+    tr.appendChild(el("td", "col-dimensions", row.size || ""));
+    tr.appendChild(el("td", "col-note", row.note || ""));
+    tbodyEl.appendChild(tr);
+  });
+}
+
 function renderTopNav(categories, container, basePath) {
   const sorted = [...categories].sort((a, b) => (a.number || 0) - (b.number || 0));
   sorted.forEach((cat) => {
