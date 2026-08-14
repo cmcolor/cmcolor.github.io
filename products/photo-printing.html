@@ -67,6 +67,8 @@
   </div>
 </footer>
 
+<div class="visitor-counter" id="visitor-counter" hidden></div>
+
 <script src="../assets/js/main.js"></script>
 <script>
   loadJson("../data/categories.json").then((categories) => {
@@ -75,6 +77,7 @@
   loadJson("../data/photo-printing.json").then((rows) => {
     renderPriceTable(rows, document.getElementById("price-table-body"));
   });
+  renderVisitorCounter(document.getElementById("visitor-counter"));
 </script>
 </body>
 </html>

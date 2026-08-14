@@ -39,11 +39,14 @@
   </div>
 </footer>
 
+<div class="visitor-counter" id="visitor-counter" hidden></div>
+
 <script src="../assets/js/main.js"></script>
 <script>
   loadJson("../data/categories.json").then((categories) => {
     renderTopNav(categories, document.getElementById("top-nav"), "../");
   });
+  renderVisitorCounter(document.getElementById("visitor-counter"));
 </script>
 </body>
 </html>

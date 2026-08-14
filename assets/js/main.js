@@ -14,6 +14,18 @@ async function loadJson(path) {
   return res.json();
 }
 
+// Free counter service (abacus.jasoncameron.dev) - counts total page loads across the
+// whole site, not unique visitors. Stays hidden if the third-party service is unreachable.
+function renderVisitorCounter(container) {
+  fetch("https://abacus.jasoncameron.dev/hit/qunmei-cmcolor-website/pageviews")
+    .then((res) => res.json())
+    .then((data) => {
+      container.textContent = `👁️ 累計瀏覽 ${Number(data.value).toLocaleString()} 次`;
+      container.hidden = false;
+    })
+    .catch(() => {});
+}
+
 function renderPriceTable(rows, tbodyEl) {
   rows.forEach((row) => {
     const tr = el("tr");
