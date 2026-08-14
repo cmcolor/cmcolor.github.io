@@ -23,11 +23,11 @@
     "number": 3,
     "slug": "id-photos",
     "title": "證件照／大頭照",
-    "description": "依用途挑選合適的證件照規格",
-    "status": "coming-soon",
+    "description": "依用途查詢合適的證件照規格，含拍攝須知與常見問題",
+    "status": "available",
+    "href": "products/id-photos.html",
     "icon": "📷",
-    "purposeSelect": true,
-    "subcategories": ["護照", "簽證", "駕照", "學生證", "國家考試（檢定）", "身分證", "選舉半身照"]
+    "subcategories": ["護照／身分證／台胞證", "健保卡／履歷照／學生證", "駕照／體檢表", "美簽／特殊簽證"]
   },
   {
     "number": 4,
