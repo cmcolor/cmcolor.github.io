@@ -467,6 +467,16 @@ a { color: var(--color-accent); }
   color: var(--color-accent-dark);
 }
 
+.font-chart-img {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 14px 0 0;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+}
+
 /* FAQ accordion */
 .faq-list {
   display: flex;
