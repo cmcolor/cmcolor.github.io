@@ -78,17 +78,6 @@ function renderCategoryGrid(categories, container) {
     card.appendChild(el("div", "title", cat.title));
     card.appendChild(el("div", "desc", cat.description || ""));
 
-    if (Array.isArray(cat.subcategories) && cat.subcategories.length) {
-      if (cat.purposeSelect) {
-        card.appendChild(el("div", "subtag-label", "選擇用途："));
-      }
-      const tagWrap = el("div", "subtag-wrap");
-      cat.subcategories.forEach((sub) => {
-        tagWrap.appendChild(el("span", `subtag${cat.purposeSelect ? " is-soon" : ""}`, sub));
-      });
-      card.appendChild(tagWrap);
-    }
-
     if (cat.tag) card.appendChild(el("div", "service-tag", `＋ ${cat.tag}`));
 
     const statusRow = el("div", "status-row");
